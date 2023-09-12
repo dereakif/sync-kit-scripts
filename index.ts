@@ -16,4 +16,4 @@ const sourceDir = path.join(repoDir, `${repoName}/*`);
 shell.cp("-R", sourceDir, destDir);
 
 shell.rm("-rf", repoDir);
-shell.rm("-rf", path.join(destDir, "*.md"));
+shell.rm("-rf", path.join(destDir, "README.md"));
