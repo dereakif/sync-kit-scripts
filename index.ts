@@ -11,8 +11,9 @@ shell.cd(repoDir);
 shell.exec(`git clone ${repoUrl}`);
 
 const destDir = process.env.KIT_DEST_DIR as string;
-const sourceDir = path.join(repoDir, repoName);
+const sourceDir = path.join(repoDir, `${repoName}/*`);
 
 shell.cp("-R", sourceDir, destDir);
 
 shell.rm("-rf", repoDir);
+shell.rm("-rf", path.join(destDir, "*.md"));
